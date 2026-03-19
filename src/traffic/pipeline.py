@@ -10,7 +10,7 @@ class Pipeline:
         self.detector = Detector()
         self.tracker = Tracker(tracker_yaml)
 
-    def run(self):
+    def run(self, **kwargs):
         cap = cv2.VideoCapture(self.video_path)
         fps = int(cap.get(cv2.CAP_PROP_FPS))
         width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -23,14 +23,9 @@ class Pipeline:
             if not ret:
                 break
 
-            # --- Детекция ---
-            det_results = self.detector.detect(frame)
+            results = self.detector.track(frame, tracker=self.tracker_yaml, **kwargs)
 
-            # --- Трекинг ---
-            track_results = self.tracker.track(frame, det_results)
-
-            # --- Аннотированный кадр ---
-            annotated_frame = track_results[0].plot()
+            annotated_frame = results[0].plot()
             out.write(annotated_frame)
 
         cap.release()
