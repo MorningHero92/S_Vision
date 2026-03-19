@@ -19,6 +19,7 @@ class Pipeline:
 
         while cap.isOpened():
             ret, frame = cap.read()
+            print("hi!")
             if not ret:
                 break
 
