@@ -1,4 +1,3 @@
-# src/traffic/pipeline.py
 import cv2
 from traffic.detection.detector import Detector
 from traffic.tracking.tracker import Tracker
