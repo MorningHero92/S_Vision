@@ -21,7 +21,7 @@ class Pipeline:
             if not ret:
                 break
 
-            results = self.detector.track(frame, tracker=self.tracker_yaml, **kwargs)
+            results = self.detector.track(source=frame, tracker=self.tracker_yaml, **kwargs)
 
             annotated_frame = results[0].plot()
             out.write(annotated_frame)
