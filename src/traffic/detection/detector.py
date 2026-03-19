@@ -5,4 +5,4 @@ class Detector:
         self.model = YOLO("yolo26m.pt")
 
     def track(self, frame, **kwargs):
-        return self.model.track(frame, tracker="none",**kwargs)
+        return self.model.track(frame, tracker="none", **kwargs)
