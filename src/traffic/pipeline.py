@@ -1,6 +1,5 @@
 import cv2
 from detection.detector import Detector
-from tracking.tracker import Tracker
 
 class Pipeline:
     def __init__(self, video_path, output_path, tracker_yaml=None):
