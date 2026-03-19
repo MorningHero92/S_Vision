@@ -7,7 +7,6 @@ class Pipeline:
         print(video_path)
         self.output_path = output_path
         self.detector = Detector()
-        self.tracker = Tracker(tracker_yaml)
 
     def run(self, **kwargs):
         cap = cv2.VideoCapture(self.video_path)
