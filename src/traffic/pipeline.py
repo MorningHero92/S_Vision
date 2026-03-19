@@ -5,6 +5,7 @@ from traffic.tracking.tracker import Tracker
 class Pipeline:
     def __init__(self, video_path, output_path, tracker_yaml=None):
         self.video_path = video_path
+        print(video_path)
         self.output_path = output_path
         self.detector = Detector()
         self.tracker = Tracker(tracker_yaml)
@@ -19,7 +20,6 @@ class Pipeline:
 
         while cap.isOpened():
             ret, frame = cap.read()
-            print("hi!")
             if not ret:
                 break
 
