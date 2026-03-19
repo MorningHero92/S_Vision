@@ -4,9 +4,9 @@ from detection.detector import Detector
 class Pipeline:
     def __init__(self, video_path, output_path, tracker_yaml=None):
         self.video_path = video_path
-        print(video_path)
         self.output_path = output_path
         self.detector = Detector()
+        self.tracker_yaml = tracker_yaml
 
     def run(self, **kwargs):
         cap = cv2.VideoCapture(self.video_path)
