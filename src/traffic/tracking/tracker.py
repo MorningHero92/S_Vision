@@ -28,9 +28,7 @@ def run_tracking(
     )
 
     while cap.isOpened():
-        print("is opened")
         ret, frame = cap.read()
-        print("is read")
         if not ret:
             break
 
