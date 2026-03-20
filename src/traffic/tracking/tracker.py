@@ -33,8 +33,7 @@ def run_tracking(
 
         results = model.track(
             frame,
-            tracker=tracker_yaml,
-            **kwargs
+            tracker=tracker_yaml
         )
 
         annotated_frame = results[0].plot()
