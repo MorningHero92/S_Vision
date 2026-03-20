@@ -34,7 +34,7 @@ def run_tracking(
             break
 
         results = model.track(
-            frame,
+            source=frame,
             tracker=tracker_yaml,
             persist=True
         )
