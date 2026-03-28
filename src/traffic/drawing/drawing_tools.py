@@ -118,18 +118,3 @@ def draw_zones_simple(video_path):
     plt.show()
     
     return polygons
-
-# ============================================
-# LIETOŠANA:
-# ============================================
-
-# Ielādē video (aizstāj ar savu video ceļu)
-source_video = "/content/sample_video.mp4"  # Ievietojiet šeit savu video ceļu
-
-# Palaist zīmēšanu
-zones = draw_zones_simple(source_video)
-
-# Pēc zīmēšanas beigām varat apskatīt rezultātu
-print("\n" + "=" * 50)
-print(f"Iegūtās zonas: {len(zones)} poligoni")
-print(zones)
