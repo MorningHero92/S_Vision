@@ -6,7 +6,7 @@ import numpy as np
 from matplotlib.backend_bases import MouseButton
 
 # Ieslēdz interaktīvo režīmu
-%matplotlib notebook
+
 
 class ZoneDrawerColab:
     def __init__(self, frame):
