@@ -95,14 +95,9 @@ class InteractiveZoneDrawer:
     def get_polygons(self):
         return self.polygons
 
-# Использование
-# Укажите путь к вашему видео
-video_path = "/content/drive/MyDrive/Machine_Vision/Source_videos/Vansu_Tilts_End.mp4"  # ЗАМЕНИТЕ НА ВАШ ВИДЕОФАЙЛ
 
-# Создаем рисовалку
-drawer = InteractiveZoneDrawer(video_path)
 
 # После закрытия окна получим результат
-zones = drawer.get_polygons()
+
 print(f"\n🎉 Получено полигонов: {len(zones)}")
 print(zones)
