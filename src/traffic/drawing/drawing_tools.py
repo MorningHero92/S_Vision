@@ -94,10 +94,3 @@ class InteractiveZoneDrawer:
     
     def get_polygons(self):
         return self.polygons
-
-
-
-# После закрытия окна получим результат
-
-print(f"\n🎉 Получено полигонов: {len(zones)}")
-print(zones)
