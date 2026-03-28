@@ -1,4 +1,4 @@
-# tracking.py
+# Detection only - used to evaluate different YOLO models on different video sources to find best speed/quality ratio
 
 import cv2
 from ultralytics import YOLO
