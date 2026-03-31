@@ -1,3 +1,5 @@
+# Drawing module for creating zones - polygons where detections would be performed
+
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,18 +11,18 @@ class InteractiveZoneDrawer:
         cap.release()
         
         if not ret:
-            raise ValueError("Не могу загрузить видео")
+            raise ValueError("Unable to load video")
         
         self.frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         self.polygons = []
         self.current_points = []
         
-        # Создаем интерактивный график
+        # Creating a plot
         self.fig, self.ax = plt.subplots(figsize=(12, 8))
         self.ax.imshow(self.frame)
-        self.ax.set_title("КЛИКНИТЕ МЫШКОЙ ДЛЯ ДОБАВЛЕНИЯ ТОЧЕК | Enter - закончить | Z - отменить | C - очистить")
+        self.ax.set_title("Click on frame to add polygon points | Enter - close polygon | Z - cancel last point | C - clear everything")
         
-        # Подключаем события
+        # Catching events (mouse clicks, keyboard clicks)
         self.fig.canvas.mpl_connect('button_press_event', self.on_click)
         self.fig.canvas.mpl_connect('key_press_event', self.on_key)
         
